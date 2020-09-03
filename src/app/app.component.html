@@ -1,4 +1,8 @@
 <p *ngIf="bookData$ | async as bookData">
   {{ bookData }}
-  <img [src]="bookData.thumbnail_url" alt="">
 </p>
+<p *ngIf="bookImg$ | async as bookImg">
+  {{ bookImg }}
+</p>
+
+<p>{{ numberArray$ | async }}</p>

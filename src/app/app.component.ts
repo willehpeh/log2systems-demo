@@ -11,6 +11,9 @@ import { map } from 'rxjs/operators';
 export class AppComponent implements OnInit {
 
   bookData$: Observable<any>;
+  bookImg$: Observable<any>;
+
+  numberArray$: Observable<string[]>;
 
   constructor(private data: DataService) {
   }
@@ -19,5 +22,8 @@ export class AppComponent implements OnInit {
     this.bookData$ = this.data.getBooks().pipe(
       map(data => data['ISBN:0451526538'])
     );
+    this.bookImg$ = this.data.getBookImage();
+
+    this.numberArray$ = this.data.getArrayObservable();
   }
 }
